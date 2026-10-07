@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vikash Saini | Developer &amp; Financial Tech Portfolio</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Google Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#090d16",
+                        surface: "#0e1526",
+                        "surface-card": "rgba(16, 24, 42, 0.75)",
+                        "surface-border": "rgba(255, 255, 255, 0.08)",
+                        primary: "#6366f1",
+                        "primary-glow": "rgba(99, 102, 241, 0.25)",
+                        secondary: "#38bdf8",
+                        accent: "#818cf8",
+                        "text-dim": "#94a3b8",
+                        "text-bright": "#f1f5f9"
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite'
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        body {
+            background-color: #090d16;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(14, 21, 38, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.35);
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+        .glow-radial {
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+        }
+        .glow-radial-cyan {
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+        }
+        .typewriter-cursor::after {
+            content: "|";
+            animation: blink 1s step-start infinite;
+            color: #38bdf8;
+            font-weight: 300;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-500 selection:text-white relative min-h-screen">
+<!-- Ambient Glowing Background Blobs -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+<div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-blob"></div>
+<div class="absolute top-1/3 -right-20 w-[30rem] h-[30rem] bg-sky-500/15 rounded-full blur-3xl animate-blob" style="animation-delay: 2s;"></div>
+<div class="absolute bottom-20 left-1/4 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-blob" style="animation-delay: 4s;"></div>
+<div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-25"></div>
+</div>
+<!-- Navigation Header -->
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090d16]/80 border-b border-white/[0.08] transition-all">
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand & Live IST Clock -->
+<div class="flex items-center gap-4 sm:gap-6">
+<a class="group flex items-center gap-3" href="#">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-sky-400 flex items-center justify-center font-extrabold text-white shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+                        VS
+                    </div>
+<div class="flex flex-col">
+<span class="font-bold text-lg text-white group-hover:text-sky-300 transition-colors tracking-tight">Vikash Saini</span>
+<span class="text-[11px] font-mono text-slate-400 tracking-wider">DEV • FINTECH</span>
+</div>
+</a>
+<!-- Live Clock Badge -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-white/10 text-xs font-mono text-slate-300 shadow-inner">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span id="live-clock">Syncing IST time...</span>
+</div>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<ul class="flex items-center gap-6 text-sm font-medium text-slate-300">
+<li><a class="hover:text-white transition-colors relative py-1 hover:after:w-full after:w-0 after:h-0.5 after:bg-sky-400 after:absolute after:bottom-0 after:left-0 after:transition-all" href="#about">About</a></li>
+<li><a class="hover:text-white transition-colors relative py-1 hover:after:w-full after:w-0 after:h-0.5 after:bg-sky-400 after:absolute after:bottom-0 after:left-0 after:transition-all" href="#skills">Skills</a></li>
+<li><a class="hover:text-white transition-colors relative py-1 hover:after:w-full after:w-0 after:h-0.5 after:bg-sky-400 after:absolute after:bottom-0 after:left-0 after:transition-all" href="#experience">Experience</a></li>
+<li><a class="hover:text-white transition-colors relative py-1 hover:after:w-full after:w-0 after:h-0.5 after:bg-sky-400 after:absolute after:bottom-0 after:left-0 after:transition-all" href="#projects">Projects</a></li>
+<li><a class="hover:text-white transition-colors relative py-1 hover:after:w-full after:w-0 after:h-0.5 after:bg-sky-400 after:absolute after:bottom-0 after:left-0 after:transition-all" href="#education">Education</a></li>
+<li><a class="hover:text-white transition-colors relative py-1 hover:after:w-full after:w-0 after:h-0.5 after:bg-sky-400 after:absolute after:bottom-0 after:left-0 after:transition-all" href="#contact">Contact</a></li>
+</ul>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-indigo-600 hover:to-sky-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transform hover:-translate-y-0.5 transition-all" href="#contact">
+<span>Hire Me</span>
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+<!-- Mobile Menu Trigger -->
+<div class="flex md:hidden items-center gap-2">
+<a class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white" href="#contact">Hire Me</a>
+</div>
+</nav>
+<!-- Mobile secondary status bar -->
+<div class="sm:hidden px-4 py-1.5 bg-slate-900/60 border-t border-white/5 flex items-center justify-center text-[11px] font-mono text-slate-300">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2"></span>
+<span id="mobile-live-clock">Syncing IST time...</span>
+</div>
+</header>
+<!-- Main Container -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28 pt-8 pb-20">
+<!-- HERO SECTION -->
+<section class="pt-12 sm:pt-20 pb-12 flex flex-col items-center text-center relative" id="hero">
+<!-- Developer Status Badge -->
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-medium mb-8 shadow-sm">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+</span>
+<span>Open to Work • Delhi, India</span>
+<span class="text-slate-500">|</span>
+<span class="text-slate-400">Software &amp; Accounts</span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
+                Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-indigo-200">Vikash Saini</span>
+</h1>
+<!-- Dynamic Rotating Typewriter -->
+<div class="min-h-[44px] sm:min-h-[52px] flex items-center justify-center mb-6">
+<p class="text-xl sm:text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-300 to-teal-300 font-mono tracking-tight">
+<span id="typewriter"></span><span class="typewriter-cursor"></span>
+</p>
+</div>
+<!-- Subtitle -->
+<p class="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed mb-10">
+                Bridging robust computer programming &amp; frontend engineering with enterprise financial accounting, statutory auditing, and automated data operations.
+            </p>
+<!-- Dual Action CTAs -->
+<div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+<a class="px-8 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-500 via-indigo-600 to-sky-500 hover:from-indigo-600 hover:to-sky-600 text-white shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 transform hover:-translate-y-0.5 transition-all flex items-center gap-2" href="#contact">
+<span class="material-symbols-outlined text-lg">mail</span>
+<span>Get In Touch</span>
+</a>
+<a class="px-8 py-3.5 rounded-xl font-semibold text-sm glass-card hover:bg-slate-800/80 text-slate-200 hover:text-white border border-white/10 hover:border-slate-600 transform hover:-translate-y-0.5 transition-all flex items-center gap-2" href="#projects">
+<span class="material-symbols-outlined text-lg">terminal</span>
+<span>Explore Projects</span>
+</a>
+</div>
+<!-- Quick Stats & Capability Chips -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
+<div class="glass-card p-4 rounded-2xl border border-white/5 text-center">
+<div class="text-2xl font-bold text-white font-mono">3+</div>
+<div class="text-xs text-slate-400 mt-1">Roles &amp; Internships</div>
+</div>
+<div class="glass-card p-4 rounded-2xl border border-white/5 text-center">
+<div class="text-2xl font-bold text-sky-400 font-mono">'O' Level</div>
+<div class="text-xs text-slate-400 mt-1">NIELIT Certified IT</div>
+</div>
+<div class="glass-card p-4 rounded-2xl border border-white/5 text-center">
+<div class="text-2xl font-bold text-indigo-400 font-mono">Python</div>
+<div class="text-xs text-slate-400 mt-1">&amp; Full-Stack Web</div>
+</div>
+<div class="glass-card p-4 rounded-2xl border border-white/5 text-center">
+<div class="text-2xl font-bold text-teal-400 font-mono">Busy &amp; Tally</div>
+<div class="text-xs text-slate-400 mt-1">Financial Auditing</div>
+</div>
+</div>
+</section>
+<!-- PROFESSIONAL SUMMARY (ABOUT) -->
+<section class="relative scroll-mt-24" id="about">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-sm">person</span> Overview
+                </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Professional Summary</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-sky-400 rounded-full mt-4"></div>
+</div>
+<div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/[0.08] relative overflow-hidden shadow-2xl">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Text Side -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-center gap-3 text-sky-400">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-sm font-semibold tracking-wide uppercase">Core Profile &amp; Trajectory</span>
+</div>
+<p class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+                            Aspiring IT professional and accountant seeking a challenging position in a reputable organization to expand learning, knowledge, and skills. Combining an active pursuit of advanced technical concepts—including object-oriented programming and data structures—with a strong foundational background in accounting, auditing, and frontend web development.
+                        </p>
+<div class="pt-2 flex flex-wrap gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-white/10 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-sm text-indigo-400">code</span> Algorithms &amp; OOP
+                            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-white/10 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-sm text-emerald-400">receipt_long</span> Financial Statements &amp; Vouchers
+                            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-white/10 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-sm text-sky-400">database</span> Relational Data &amp; Analytics
+                            </span>
+</div>
+</div>
+<!-- Visual Highlight Badges Side -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="p-4 rounded-2xl bg-slate-900/80 border border-indigo-500/20 flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+<span class="material-symbols-outlined text-xl">layers</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white">Dual Hybrid Domain</h4>
+<p class="text-xs text-slate-400 mt-1">Harmonious synthesis of software engineering rigor and financial auditing discipline.</p>
+</div>
+</div>
+<div class="p-4 rounded-2xl bg-slate-900/80 border border-sky-500/20 flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white">Continuous Upskilling</h4>
+<p class="text-xs text-slate-400 mt-1">Actively expanding into DevSecOps, Cloud Computing, and Applied AI frameworks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TECHNICAL & PROFESSIONAL SKILLS -->
+<section class="relative scroll-mt-24" id="skills">
+<div class="flex flex-col items-center text-center mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-mono uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-sm">integration_instructions</span> Capabilities
+                </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Technical &amp; Professional Skills</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Skill Card 1: Programming & Web -->
+<div class="glass-card glass-card-hover rounded-3xl p-7 border border-white/[0.08] relative group">
+<div class="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">code</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Programming &amp; Web</h3>
+<p class="text-xs text-slate-400 mb-6">Application development, modern interfaces, and relational querying.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-indigo-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+<span>Python &amp; C Language</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-indigo-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+<span>HTML, CSS, JavaScript</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-indigo-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+<span>MySQL Database</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-indigo-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+<span>Object-Oriented Programming</span>
+</li>
+</ul>
+</div>
+<!-- Skill Card 2: Accounting & Auditing -->
+<div class="glass-card glass-card-hover rounded-3xl p-7 border border-white/[0.08] relative group">
+<div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Accounting &amp; Auditing</h3>
+<p class="text-xs text-slate-400 mb-6">Financial operations, ledgers, reconciliations, and tax audit support.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-emerald-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Tally ERP 9 &amp; Tally Prime</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-emerald-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Busy Software</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-emerald-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Bank Auditing</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-emerald-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Sales, Purchases &amp; Vouchers</span>
+</li>
+</ul>
+</div>
+<!-- Skill Card 3: Software & Tools -->
+<div class="glass-card glass-card-hover rounded-3xl p-7 border border-white/[0.08] relative group">
+<div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">build</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Software &amp; Tools</h3>
+<p class="text-xs text-slate-400 mb-6">Productivity suites, creative tools, computer vision, and workflows.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-sky-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>Microsoft Office Suite (Advanced Excel)</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-sky-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>Adobe Photoshop &amp; CorelDRAW</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-sky-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>OpenCV, Pandas, Tkinter</span>
+</li>
+<li class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/60 border border-white/5 text-sm text-slate-200 hover:border-sky-500/30 transition-colors">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>Multitasking &amp; Time Management</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- PROFESSIONAL EXPERIENCE -->
+<section class="relative scroll-mt-24" id="experience">
+<div class="flex flex-col items-center text-center mb-16">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-sm">history_edu</span> Career Path
+                </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Professional Experience</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-sky-400 rounded-full mt-4"></div>
+</div>
+<div class="relative max-w-4xl mx-auto">
+<!-- Vertical Timeline Guide Line -->
+<div class="absolute left-4 sm:left-1/2 top-4 bottom-4 -translate-x-1/2 w-0.5 bg-gradient-to-b from-indigo-500 via-sky-500 to-indigo-900/30 hidden sm:block"></div>
+<div class="absolute left-6 top-4 bottom-4 w-0.5 bg-gradient-to-b from-indigo-500 via-sky-500 to-indigo-900/30 sm:hidden"></div>
+<div class="space-y-12">
+<!-- Timeline Item 1 -->
+<div class="relative flex flex-col sm:flex-row items-start group">
+<!-- Node Marker -->
+<div class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-950 shadow-lg shadow-indigo-500/50 z-10 mt-6 group-hover:scale-125 transition-transform"></div>
+<!-- Content Left / Right depending on layout -->
+<div class="sm:w-1/2 sm:pr-12 pl-14 sm:pl-0 w-full sm:text-right">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
+                                July 2026 – Present
+                            </span>
+<h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">Accountant</h3>
+<h4 class="text-sm font-medium text-sky-400 mb-3">Suneja Brothers - Manufacturing Production Pvt Ltd.</h4>
+</div>
+<div class="sm:w-1/2 sm:pl-12 pl-14 sm:pl-0 w-full mt-2 sm:mt-0">
+<div class="glass-card p-6 rounded-2xl border border-white/5 group-hover:border-indigo-500/30 transition-all">
+<p class="text-sm text-slate-300 leading-relaxed">
+                                    Manage day-to-day accounts utilizing Busy software. Process sales, purchases, bank entries, bills, and vouchers to ensure accurate financial tracking.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex flex-col sm:flex-row items-start group">
+<!-- Node Marker -->
+<div class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-sky-400 border-4 border-slate-950 shadow-lg shadow-sky-500/50 z-10 mt-6 group-hover:scale-125 transition-transform"></div>
+<!-- Content: Reversing side for balance on desktop -->
+<div class="sm:w-1/2 sm:pr-12 pl-14 sm:pl-0 w-full sm:text-right order-1 sm:order-1">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30 mb-2">
+                                December 2024 – July 2026
+                            </span>
+<h3 class="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">Audit Assistant (Internship)</h3>
+<h4 class="text-sm font-medium text-indigo-400 mb-3">Chartered Accountant Shyam Bamboria &amp; Company, Delhi</h4>
+</div>
+<div class="sm:w-1/2 sm:pl-12 pl-14 sm:pl-0 w-full mt-2 sm:mt-0 order-2 sm:order-2">
+<div class="glass-card p-6 rounded-2xl border border-white/5 group-hover:border-sky-500/30 transition-all">
+<p class="text-sm text-slate-300 leading-relaxed">
+                                    Handled comprehensive auditing tasks, general accounting operations, and office administration to support organizational compliance and efficiency.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex flex-col sm:flex-row items-start group">
+<!-- Node Marker -->
+<div class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-teal-400 border-4 border-slate-950 shadow-lg shadow-teal-500/50 z-10 mt-6 group-hover:scale-125 transition-transform"></div>
+<div class="sm:w-1/2 sm:pr-12 pl-14 sm:pl-0 w-full sm:text-right">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30 mb-2">
+                                September 2023 – April 2024
+                            </span>
+<h3 class="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">Computer Lab Assistant</h3>
+<h4 class="text-sm font-medium text-slate-300 mb-3">Srgip Institute, Delhi</h4>
+</div>
+<div class="sm:w-1/2 sm:pl-12 pl-14 sm:pl-0 w-full mt-2 sm:mt-0">
+<div class="glass-card p-6 rounded-2xl border border-white/5 group-hover:border-teal-500/30 transition-all">
+<p class="text-sm text-slate-300 leading-relaxed">
+                                    Assisted students during laboratory sessions. Guided student learning through targeted questioning and facilitated technical problem-solving.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED PROJECTS -->
+<section class="relative scroll-mt-24" id="projects">
+<div class="flex flex-col items-center text-center mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-sm">laptop_chromebook</span> Engineering
+                </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Featured Projects</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-sky-400 rounded-full mt-4"></div>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden group shadow-2xl">
+<!-- Subtle Glow -->
+<div class="absolute -top-24 -left-24 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-4">
+<div class="flex items-center gap-2 text-indigo-400 text-xs font-mono uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">visibility</span> Computer Vision &amp; AI Application
+                            </div>
+<h3 class="text-2xl sm:text-3xl font-extrabold text-white">Face Recognition Attendance System</h3>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                Developed an automated attendance tracking solution utilizing computer vision. Engineered the backend with Python and handled data sets using Pandas and CSV.
+                            </p>
+<!-- Tech Stack Badges -->
+<div class="pt-2">
+<span class="text-xs text-slate-400 font-medium block mb-2 font-mono uppercase">Technologies:</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-lg text-xs font-mono bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">Python</span>
+<span class="px-3 py-1 rounded-lg text-xs font-mono bg-sky-500/15 text-sky-300 border border-sky-500/30">OpenCV</span>
+<span class="px-3 py-1 rounded-lg text-xs font-mono bg-teal-500/15 text-teal-300 border border-teal-500/30">Pandas</span>
+<span class="px-3 py-1 rounded-lg text-xs font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30">Tkinter</span>
+<span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-white/10">CSV</span>
+</div>
+</div>
+</div>
+<!-- Simulated CV Detection UI Box -->
+<div class="lg:col-span-5">
+<div class="bg-slate-950/90 rounded-2xl p-5 border border-indigo-500/30 shadow-inner relative font-mono text-xs text-slate-300 overflow-hidden">
+<div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+</div>
+<span class="text-[10px] text-slate-400">cv2_cascade_engine.py</span>
+</div>
+<!-- Visual Facial Frame Simulation -->
+<div class="h-36 rounded-xl bg-slate-900 border border-dashed border-sky-400/40 relative flex flex-col items-center justify-center p-3 mb-4">
+<div class="w-16 h-16 rounded-lg border-2 border-emerald-400/80 relative flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-3xl text-emerald-400">face</span>
+<div class="absolute -top-3 left-0 bg-emerald-500 text-slate-950 text-[9px] font-bold px-1 rounded">MATCH: 99.4%</div>
+</div>
+<div class="text-[10px] text-slate-400 mt-2 font-mono flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live Detection Active
+                                    </div>
+</div>
+<div class="space-y-1 text-[11px] text-slate-400">
+<div><span class="text-indigo-400">&gt;</span> Status: <span class="text-emerald-400">Logged to CSV</span></div>
+<div><span class="text-indigo-400">&gt;</span> Timestamp: <span class="text-slate-300">Auto-synced</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EDUCATION & CERTIFICATIONS -->
+<section class="relative scroll-mt-24" id="education">
+<div class="flex flex-col items-center text-center mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-mono uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-sm">workspace_premium</span> Credentials
+                </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Education &amp; Certifications</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Academic Degrees -->
+<div class="glass-card rounded-3xl p-6 sm:p-7 border border-white/[0.08] flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-lg font-bold text-white">Academic Degrees</h3>
+</div>
+<ul class="space-y-4">
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">B.A. Programme (Pol. Science &amp; Economics)</strong>
+<span class="text-xs text-sky-300 mt-1 block">University of Delhi (6.167 CGPA)</span>
+</li>
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">12th - Arts (CBSE)</strong>
+<span class="text-xs text-slate-400 mt-1 block">Geeta Sr Sec School No. 2, Delhi</span>
+<span class="text-[11px] text-indigo-400 font-mono">July 2022</span>
+</li>
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">10th - Arts (CBSE)</strong>
+<span class="text-xs text-slate-400 mt-1 block">Geeta Sr Sec School No. 2, Delhi</span>
+<span class="text-[11px] text-indigo-400 font-mono">July 2020</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Technical Education -->
+<div class="glass-card rounded-3xl p-6 sm:p-7 border border-white/[0.08] flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
+<span class="material-symbols-outlined">developer_board</span>
+</div>
+<h3 class="text-lg font-bold text-white">Technical Education</h3>
+</div>
+<ul class="space-y-4">
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">'A' Level Certification</strong>
+<span class="text-xs text-slate-300 mt-1 block">NIELIT, Delhi</span>
+<span class="text-[11px] text-sky-400 font-mono">Registered Sept 2026</span>
+</li>
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">'O' Level Information Technology</strong>
+<span class="text-xs text-slate-300 mt-1 block">NIELIT, Delhi</span>
+<span class="text-[11px] text-emerald-400 font-mono font-medium">Passed All Semesters</span>
+</li>
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">Diploma: Adv. Excel, Tally, Busy</strong>
+<span class="text-xs text-slate-300 mt-1 block">Srgip Institute, Delhi</span>
+<span class="text-[11px] text-indigo-400 font-mono">Jan 2024</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Recent Certifications -->
+<div class="glass-card rounded-3xl p-6 sm:p-7 border border-white/[0.08] flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="text-lg font-bold text-white">Recent Certifications</h3>
+</div>
+<ul class="space-y-4">
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">DevSecOps Training (120-hour)</strong>
+<span class="text-xs text-slate-300 mt-1 block">NIELIT &amp; Kyndryl</span>
+<span class="text-[11px] text-teal-400 font-mono">Enrolled July 2026</span>
+</li>
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">Cloud Computing Bootcamp</strong>
+<span class="text-xs text-slate-300 mt-1 block">FutureSkills PRIME, NIELIT</span>
+<span class="text-[11px] text-sky-400 font-mono">March 2025</span>
+</li>
+<li class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5">
+<strong class="text-white block text-sm font-semibold">Artificial Intelligence Bootcamp</strong>
+<span class="text-xs text-slate-300 mt-1 block">FutureSkills PRIME, NIELIT</span>
+<span class="text-[11px] text-indigo-400 font-mono">Sept 2024</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION -->
+<section class="relative scroll-mt-24" id="contact">
+<div class="flex flex-col items-center text-center mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-sm">send</span> Communication
+                </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Contact Me</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-sky-400 rounded-full mt-4"></div>
+</div>
+<div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 max-w-4xl mx-auto shadow-2xl relative">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+<!-- Location Card -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-indigo-500/30 transition-all flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 mb-1">Location</h4>
+<p class="text-sm font-semibold text-white">Delhi-110086, India</p>
+</div>
+<!-- Phone Card -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-indigo-500/30 transition-all flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-4">
+<span class="material-symbols-outlined text-2xl">call</span>
+</div>
+<h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 mb-1">Phone</h4>
+<a class="text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors" href="tel:+917827751099">
+                            +91 7827751099
+                        </a>
+</div>
+<!-- Email Card -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-indigo-500/30 transition-all flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400 mb-4">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<h4 class="text-xs uppercase font-mono tracking-wider text-slate-400 mb-1">Email</h4>
+<a class="text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors break-all" href="mailto:vikashsaini22g@gmail.com">
+                            vikashsaini22g@gmail.com
+                        </a>
+</div>
+</div>
+<!-- Direct Action Bar -->
+<div class="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+<div>
+<h4 class="text-white font-bold text-base">Ready for high-impact collaboration?</h4>
+<p class="text-xs text-slate-400">Available for developer roles, financial accounting, and auditing assignments.</p>
+</div>
+<a class="px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-indigo-600 hover:to-sky-600 text-white shadow-lg shadow-indigo-500/25 transition-all shrink-0" href="mailto:vikashsaini22g@gmail.com">
+                        Send Email Directly
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-white/[0.08] bg-[#070b12] py-10 px-4 sm:px-6">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+<div class="flex items-center gap-2">
+<span class="font-bold text-white tracking-wide">Vikash Saini</span>
+<span>•</span>
+<span>© 2026 Vikash Saini. All rights reserved.</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-white transition-colors" href="#about">About</a>
+<a class="hover:text-white transition-colors" href="#skills">Skills</a>
+<a class="hover:text-white transition-colors" href="#experience">Experience</a>
+<a class="hover:text-white transition-colors" href="#projects">Projects</a>
+<a class="flex items-center gap-1 hover:text-sky-300 transition-colors" href="#hero">
+<span>Back to top</span>
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+</a>
+</div>
+</div>
+</footer>
+<!-- JAVASCRIPT: Live IST Clock & Typewriter Effect -->
+<script>
+        // 1. Live Indian Standard Time (IST) Clock
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-IN', { 
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+            const formatted = "Live: " + timeString + " (IST)";
+            const desktopEl = document.getElementById('live-clock');
+            const mobileEl = document.getElementById('mobile-live-clock');
+            if (desktopEl) desktopEl.textContent = formatted;
+            if (mobileEl) mobileEl.textContent = formatted;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // 2. Dynamic Typewriter Effect
+        const roles = [
+            "Frontend Developer",
+            "Python Programmer",
+            "Accountant",
+            "'O' Level Certified IT Professional"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function typeEffect() {
+            if (!typewriterElement) return;
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typingSpeed = 2000; // Pause at full word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typingSpeed = 500; // Pause before typing next
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeEffect, 600);
+        });
+    </script>
+</body></html>
